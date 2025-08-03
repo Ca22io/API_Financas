@@ -1,4 +1,6 @@
+using API_Financas.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Financas.Controllers
 {
@@ -6,24 +8,29 @@ namespace API_Financas.Controllers
     [Route("[controller]")]
     public class TransacaoController : ControllerBase
     {
+        readonly FinancasContext _context;
 
-        [HttpGet(Name = "GetTransacoes")]
-        public async Task<IEnumerable<Transacao>> ObterTransacoes()
+        public TransacaoController(FinancasContext context)
         {
-            return await Task.FromResult(new List<Transacao>
-            {
-                new Transacao { Id = 1, Descricao = "Compra de supermercado", Valor = 150.00m, Data = DateTime.Now },
-                new Transacao { Id = 2, Descricao = "Pagamento de conta de luz", Valor = 75.00m, Data = DateTime.Now.AddDays(-1) },
-                new Transacao { Id = 3, Descricao = "Venda de produto", Valor = 200.00m, Data = DateTime.Now.AddDays(-2) }
-            });
+            _context = context;
         }
+
+        [HttpGet]
+        public async Task<IActionResult> ObterTransacoes()
+        {
+
+            var transacoes = await _context.Transacoes
+                .Include(t => t.Categorias)
+                .Include(t => t.Tipos)
+                .OrderByDescending(t => t.Data)
+                .AsNoTracking()
+                .ToListAsync();
+
+            return Ok(transacoes);
+            
+        }
+        
     }
 
-    public class Transacao
-    {
-        public int Id { get; set; }
-        public string Descricao { get; set; }
-        public decimal Valor { get; set; }
-        public DateTime Data { get; set; }
-    };
+   
 }

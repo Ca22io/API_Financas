@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Financas.Migrations
 {
     [DbContext(typeof(FinancasContext))]
-    [Migration("20250801195413_versao1")]
-    partial class versao1
+    [Migration("20250801224647_version2")]
+    partial class version2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,11 +22,7 @@ namespace API_Financas.Migrations
 
             modelBuilder.Entity("API_Financas.Models.CategoriaModel", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("IdCategoria")
+                    b.Property<int>("IdCategoria")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
@@ -34,20 +30,14 @@ namespace API_Financas.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdCategoria");
+                    b.HasKey("IdCategoria");
 
                     b.ToTable("Categorias");
                 });
 
             modelBuilder.Entity("API_Financas.Models.TipoModel", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("IdTipo")
+                    b.Property<int>("IdTipo")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
@@ -55,16 +45,14 @@ namespace API_Financas.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdTipo");
+                    b.HasKey("IdTipo");
 
                     b.ToTable("Tipos");
                 });
 
             modelBuilder.Entity("API_Financas.Models.TransacaoModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdTransacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -85,7 +73,7 @@ namespace API_Financas.Migrations
                     b.Property<decimal>("Valor")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdTransacao");
 
                     b.ToTable("Transacoes");
                 });
@@ -94,14 +82,18 @@ namespace API_Financas.Migrations
                 {
                     b.HasOne("API_Financas.Models.TransacaoModel", null)
                         .WithMany("Categorias")
-                        .HasForeignKey("IdCategoria");
+                        .HasForeignKey("IdCategoria")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("API_Financas.Models.TipoModel", b =>
                 {
                     b.HasOne("API_Financas.Models.TransacaoModel", null)
                         .WithMany("Tipos")
-                        .HasForeignKey("IdTipo");
+                        .HasForeignKey("IdTipo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("API_Financas.Models.TransacaoModel", b =>

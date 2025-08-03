@@ -5,6 +5,9 @@ namespace API_Financas.Data
 {
     public class FinancasContext : DbContext
     {
+        public FinancasContext(DbContextOptions<FinancasContext> options) : base(options)
+        {
+        }
 
         public DbSet<TipoModel> Tipos { get; set; }
 
@@ -12,8 +15,5 @@ namespace API_Financas.Data
 
         public DbSet<TransacaoModel> Transacoes { get; set; }
 
-        public FinancasContext(DbContextOptions<FinancasContext> options) : base(options)
-        {
-        }
     }
 }

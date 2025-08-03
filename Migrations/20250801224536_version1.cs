@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API_Financas.Migrations
 {
     /// <inheritdoc />
-    public partial class versao1 : Migration
+    public partial class version1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace API_Financas.Migrations
                 name: "Transacoes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdTransacao = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Descricao = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
                     Valor = table.Column<decimal>(type: "TEXT", nullable: false),
@@ -25,56 +25,44 @@ namespace API_Financas.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Transacoes", x => x.Id);
+                    table.PrimaryKey("PK_Transacoes", x => x.IdTransacao);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Categorias",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    IdCategoria = table.Column<int>(type: "INTEGER", nullable: true)
+                    IdCategoria = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categorias", x => x.Id);
+                    table.PrimaryKey("PK_Categorias", x => x.IdCategoria);
                     table.ForeignKey(
                         name: "FK_Categorias_Transacoes_IdCategoria",
                         column: x => x.IdCategoria,
                         principalTable: "Transacoes",
-                        principalColumn: "Id");
+                        principalColumn: "IdTransacao",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Tipos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    IdTipo = table.Column<int>(type: "INTEGER", nullable: true)
+                    IdTipo = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tipos", x => x.Id);
+                    table.PrimaryKey("PK_Tipos", x => x.IdTipo);
                     table.ForeignKey(
                         name: "FK_Tipos_Transacoes_IdTipo",
                         column: x => x.IdTipo,
                         principalTable: "Transacoes",
-                        principalColumn: "Id");
+                        principalColumn: "IdTransacao",
+                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Categorias_IdCategoria",
-                table: "Categorias",
-                column: "IdCategoria");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tipos_IdTipo",
-                table: "Tipos",
-                column: "IdTipo");
         }
 
         /// <inheritdoc />

@@ -3,12 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var Configuration = builder.Configuration;
 
-builder.Services.AddDbContext<FinancasContext>(options =>
-    options.UseSqlite(connectionString));
+builder.Services.AddDbContext<API_Financas.Data.FinancasContext>( options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(); 
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

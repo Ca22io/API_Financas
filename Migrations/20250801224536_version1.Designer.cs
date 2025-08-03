@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Financas.Migrations
 {
     [DbContext(typeof(FinancasContext))]
-    [Migration("20250801195636_versao2")]
-    partial class versao2
+    [Migration("20250801224536_version1")]
+    partial class version1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
