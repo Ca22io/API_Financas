@@ -15,5 +15,6 @@ namespace API_Financas.Data
 
         public DbSet<TransacaoModel> Transacoes { get; set; }
 
+
     }
 }

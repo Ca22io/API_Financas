@@ -1,8 +1,8 @@
-using System.Linq;
-using System.Threading.Tasks;
-using API_Financas.Data;
+using API_Financas.Data.Repositories;
+using API_Financas.Domain.Enum;
+using API_Financas.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace API_Financas.Controllers
 {
@@ -10,29 +10,81 @@ namespace API_Financas.Controllers
     [Route("[controller]")]
     public class TransacaoController : ControllerBase
     {
-        readonly FinancasContext _context;
+        private readonly TransacaoRepository _transacaoRepository;
 
-        public TransacaoController(FinancasContext context)
+        public TransacaoController(TransacaoRepository transacaoRepository)
         {
-            _context = context;
+            _transacaoRepository = transacaoRepository;
         }
 
         [HttpGet]
-        public async Task<IActionResult> ObterTransacoes()
+        public async Task<IActionResult> ObterTransacoes([FromQuery] DateOnly? dataInicio, [FromBody] DateOnly? dataFim)
         {
-
-            var transacoes = await _context.Transacoes
-                .Include(t => t.Categorias)
-                .Include(t => t.Tipos)
-                .OrderBy(t => t.Data)
-                .AsNoTracking()
-                .ToListAsync();
-
-            return Ok(transacoes);
+            _transacaoRepository.IncluirTipo();
             
-        }
-        
-    }
+            if (dataInicio == null && dataFim == null)
+            {
+                var transacoes = await _transacaoRepository.ObterTransacaoAsync();
+                return Ok(transacoes);
+            }
 
-   
+            var transacao = await _transacaoRepository.ObterTransacoesPorDataAsync(dataInicio.Value, dataFim.Value);
+            return Ok(transacao);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AdicionarTransacoes([FromBody] TransacaoModel transacao)
+        {
+            if (ModelState.IsValid)
+            {
+                var AdicionarTransacao = await _transacaoRepository.AdicionarTransacaoAsync(transacao);
+
+                return AdicionarTransacao switch
+                {
+                    StatusOperacao.Sucesso => Ok("Transação adicionada com sucesso!"),
+                    StatusOperacao.Erro => BadRequest("Erro ao adicionar transação!")
+                };
+            }
+
+            return BadRequest(transacao);
+        }
+
+        [HttpDelete("{IdTransacao}")]
+        public async Task<IActionResult> DeletarTransacao(int IdTransacao)
+        {
+            if (IdTransacao > 0)
+            {
+                var DeletarTransacao = await _transacaoRepository.RemoverTransacaoAsync(IdTransacao);
+
+                return DeletarTransacao switch
+                {
+                    StatusOperacao.Sucesso => Ok("Transacao deletada com sucesso!"),
+                    StatusOperacao.NaoEncontrado => BadRequest("Transacao não encontrada!"),
+                    StatusOperacao.Erro => BadRequest("Erro ao deletar transacao!")
+                };
+            }
+
+            return BadRequest("Id invalido");
+        }
+
+
+        [HttpPut]
+        public async Task<IActionResult> AtualizarTransacao([FromBody] TransacaoModel transacao)
+        {
+            if (ModelState.IsValid)
+            {
+                var AtualizarTransacao = await _transacaoRepository.AtualizarTransacaoAsync(transacao);
+
+                return AtualizarTransacao switch
+                {
+                    StatusOperacao.Sucesso => Ok("Transação atualizada com sucesso!"),
+                    StatusOperacao.NaoEncontrado => BadRequest("Transação não encontrada!"),
+                    StatusOperacao.Erro => BadRequest("Erro ao atualizar transação!")
+                };
+            }
+
+            return BadRequest(transacao);
+        }
+
+    }
 }

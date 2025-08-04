@@ -14,7 +14,7 @@ namespace API_Financas.Models
         [Required]
         public decimal Valor { get; set; }
 
-        public DateTime Data { get; set; }
+        public DateOnly Data { get; set; }
 
         public int IdTipo { get; set; }
 
