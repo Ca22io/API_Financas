@@ -5,9 +5,11 @@ namespace API_Financas.Models
     public class TipoModel
     {
         [Key]
-        public int IdTipo { get; set; }
+        public int? IdTipo { get; set; }
 
         [Required, StringLength(100)]
         public string Nome { get; set; }
+
+        public ICollection<TransacaoModel> Transacoes { get; set; }
     }
 }

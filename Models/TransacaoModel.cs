@@ -19,11 +19,12 @@ namespace API_Financas.Models
         public int IdTipo { get; set; }
 
         public int IdCategoria { get; set; }
-        
+
         [ForeignKey("IdCategoria")]
-        public ICollection<CategoriaModel> Categorias { get; set; }
+        public CategoriaModel Categoria { get; set; }
 
         [ForeignKey("IdTipo")]
-        public ICollection<TipoModel> Tipos { get; set; }
+        public TipoModel Tipo { get; set; }
+        
     }
 }

@@ -15,17 +15,11 @@ namespace API_Financas.Data.Repositories
 
         }
 
-        public void IncluirTipo()
-        {
-            _context.Tipos.Add(new TipoModel { Nome = "Receita" });
-            _context.Tipos.Add(new TipoModel { Nome = "Despesa" });
-        }
-
         public async Task<IEnumerable<TransacaoModel>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim)
         {
             var transacoes = await _context.Transacoes
-                .Include(t => t.Categorias)
-                .Include(t => t.Tipos)
+                .Include(t => t.Categoria)
+                .Include(t => t.Tipo)
                 .Where(t => t.Data >= dataInicio && t.Data <= dataFim)
                 .OrderBy(t => t.Data)
                 .AsNoTracking()
@@ -37,8 +31,8 @@ namespace API_Financas.Data.Repositories
         public async Task<IEnumerable<TransacaoModel>> ObterTransacaoAsync()
         {
             var transacoes = await _context.Transacoes
-                .Include(t => t.Categorias)
-                .Include(t => t.Tipos)
+                .Include(t => t.Categoria)
+                .Include(t => t.Tipo)
                 .OrderBy(t => t.Data)
                 .AsNoTracking()
                 .ToListAsync();

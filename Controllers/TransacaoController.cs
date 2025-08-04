@@ -18,9 +18,8 @@ namespace API_Financas.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ObterTransacoes([FromQuery] DateOnly? dataInicio, [FromBody] DateOnly? dataFim)
+        public async Task<IActionResult> ObterTransacoes([FromQuery] DateOnly? dataInicio, [FromQuery] DateOnly? dataFim)
         {
-            _transacaoRepository.IncluirTipo();
             
             if (dataInicio == null && dataFim == null)
             {
