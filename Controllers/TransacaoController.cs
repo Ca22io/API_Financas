@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Threading.Tasks;
 using API_Financas.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +24,7 @@ namespace API_Financas.Controllers
             var transacoes = await _context.Transacoes
                 .Include(t => t.Categorias)
                 .Include(t => t.Tipos)
-                .OrderByDescending(t => t.Data)
+                .OrderBy(t => t.Data)
                 .AsNoTracking()
                 .ToListAsync();
 
