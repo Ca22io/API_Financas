@@ -33,7 +33,7 @@ namespace API_Financas.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdicionarTransacoes([FromBody] TransacaoDto transacao)
+        public async Task<IActionResult> AdicionarTransacoes([FromBody] TransacaoPostDto transacao)
         {
             if (ModelState.IsValid)
             {

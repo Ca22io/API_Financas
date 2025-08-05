@@ -1,6 +1,6 @@
 namespace API_Financas.Dto.Transacao
 {
-    public class TransacaoDto
+    public class TransacaoPostDto
     {
         public required string Descricao { get; set; }
 
