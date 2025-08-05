@@ -63,15 +63,18 @@ namespace API_Financas.Data.Repositories
 
         }
 
-        public async Task<StatusOperacao> AtualizarTransacaoAsync(TransacaoModel transacao)
+        public async Task<StatusOperacao> AtualizarTransacaoAsync(TransacaoModel Transacao)
         {
 
-            if (VerificarTransacaoexiste(transacao.IdTransacao) == false)
+            if (!VerificarTransacaoexiste(Transacao.IdTransacao))
             {
                 return StatusOperacao.NaoEncontrado;
             }
 
-            _context.Transacoes.Update(transacao);
+            var TransacaoAtualiza = await _context.Transacoes.AsTracking().FirstOrDefaultAsync(t => t.IdTransacao == Transacao.IdTransacao);
+
+            TransacaoAtualiza.Descricao = Transacao.Descricao;
+            TransacaoAtualiza.Valor = Transacao.Valor;
 
             if (await _context.SaveChangesAsync() > 0)
             {

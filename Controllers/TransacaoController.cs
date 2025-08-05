@@ -78,11 +78,18 @@ namespace API_Financas.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> AtualizarTransacao([FromBody] TransacaoModel transacao)
+        public async Task<IActionResult> AtualizarTransacao([FromBody] TransacaoPutDto transacao)
         {
             if (ModelState.IsValid)
             {
-                var AtualizarTransacao = await _transacaoRepository.AtualizarTransacaoAsync(transacao);
+                var Transacao = new TransacaoModel
+                {
+                    IdTransacao = transacao.IdTransacao,
+                    Descricao = transacao.Descricao,
+                    Valor = transacao.Valor
+                };
+
+                var AtualizarTransacao = await _transacaoRepository.AtualizarTransacaoAsync(Transacao);
 
                 return AtualizarTransacao switch
                 {
