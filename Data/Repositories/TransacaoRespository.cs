@@ -60,6 +60,7 @@ namespace API_Financas.Data.Repositories
 
         public async Task<StatusOperacao> AtualizarTransacaoAsync(TransacaoModel transacao)
         {
+
             if (VerificarTransacaoexiste(transacao.IdTransacao) == false)
             {
                 return StatusOperacao.NaoEncontrado;

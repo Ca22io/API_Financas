@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using API_Financas.Dto.Transacao;
 
 namespace API_Financas.Models
 {
@@ -21,10 +22,10 @@ namespace API_Financas.Models
         public int IdCategoria { get; set; }
 
         [ForeignKey("IdCategoria")]
-        public CategoriaModel Categoria { get; set; }
+        public CategoriaModel? Categoria { get; set; }
 
         [ForeignKey("IdTipo")]
-        public TipoModel Tipo { get; set; }
+        public TipoModel? Tipo { get; set; }
         
     }
 }

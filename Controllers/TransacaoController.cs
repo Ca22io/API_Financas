@@ -1,5 +1,6 @@
 using API_Financas.Data.Repositories;
 using API_Financas.Domain.Enum;
+using API_Financas.Dto.Transacao;
 using API_Financas.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,11 +33,20 @@ namespace API_Financas.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdicionarTransacoes([FromBody] TransacaoModel transacao)
+        public async Task<IActionResult> AdicionarTransacoes([FromBody] TransacaoDto transacao)
         {
             if (ModelState.IsValid)
             {
-                var AdicionarTransacao = await _transacaoRepository.AdicionarTransacaoAsync(transacao);
+                var Transacao = new TransacaoModel
+                {
+                    Descricao = transacao.Descricao,
+                    Valor = transacao.Valor,
+                    Data = transacao.Data,
+                    IdTipo = transacao.IdTipo,
+                    IdCategoria = transacao.IdCategoria
+                };
+
+                var AdicionarTransacao = await _transacaoRepository.AdicionarTransacaoAsync(Transacao);
 
                 return AdicionarTransacao switch
                 {
