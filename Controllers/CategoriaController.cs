@@ -20,7 +20,7 @@ namespace API_Financas.Controllers
         [HttpGet]
         public async Task<IActionResult> Obtercategorias()
         {
-            return Ok(_categoriaRepository.ObterCategoriasAsync());
+            return Ok( await _categoriaRepository.ObterCategoriasAsync());
         }
 
         [HttpPost]
@@ -59,7 +59,7 @@ namespace API_Financas.Controllers
             return BadRequest(categoria);
         }
 
-        [HttpDelete("[IdCategoria]")]
+        [HttpDelete("{IdCategoria}")]
         public async Task<IActionResult> RemoverCategoria(int IdCategoria)
         {
             if (IdCategoria > 0)

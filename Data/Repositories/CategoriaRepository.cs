@@ -41,7 +41,7 @@ namespace API_Financas.Data.Repositories
                 return StatusOperacao.NaoEncontrado;
             }
 
-            await _context.Categorias.AddAsync(categoria);
+            _context.Categorias.Update(categoria);
 
             if (await _context.SaveChangesAsync() > 0)
             {
