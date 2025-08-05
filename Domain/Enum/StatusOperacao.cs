@@ -4,6 +4,7 @@ namespace API_Financas.Domain.Enum
     {
         Sucesso,
         NaoEncontrado,
-        Erro
+        Erro,
+        IdInvalido
     }
 }

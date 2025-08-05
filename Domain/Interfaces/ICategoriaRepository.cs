@@ -1,14 +1,14 @@
+using API_Financas.Domain.Enum;
 using API_Financas.Models;
 
 namespace API_Financas.Domain.Interfaces
 {
-
     public interface ICategoriaRepository
     {
         Task<IEnumerable<CategoriaModel>> ObterCategoriasAsync();
-        Task AdicionarCategoriaAsync(CategoriaModel categoria);
-        Task AtualizarCategoriaAsync(CategoriaModel categoria);
-        Task RemoverCategoriaAsync(int id);
+        Task<StatusOperacao> AdicionarCategoriaAsync(CategoriaModel categoria);
+        Task<StatusOperacao> AtualizarCategoriaAsync(CategoriaModel categoria);
+        Task<StatusOperacao> RemoverCategoriaAsync(int id);
     }
 
 }

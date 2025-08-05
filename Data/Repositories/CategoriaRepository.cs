@@ -1,5 +1,7 @@
+using API_Financas.Domain.Enum;
 using API_Financas.Domain.Interfaces;
 using API_Financas.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Financas.Data.Repositories
 {
@@ -13,24 +15,71 @@ namespace API_Financas.Data.Repositories
             _context = context;
         }
 
-        public Task AdicionarCategoriaAsync(CategoriaModel categoria)
+        public async Task<IEnumerable<CategoriaModel>> ObterCategoriasAsync()
         {
-            throw new NotImplementedException();
+            var categorias = await _context.Categorias.AsNoTracking().ToListAsync();
+
+            return categorias;
         }
 
-        public Task AtualizarCategoriaAsync(CategoriaModel categoria)
+        public async Task<StatusOperacao> AdicionarCategoriaAsync(CategoriaModel categoria)
         {
-            throw new NotImplementedException();
+            await _context.Categorias.AddAsync(categoria);
+
+            if (await _context.SaveChangesAsync() > 0)
+            {
+                return StatusOperacao.Sucesso;
+            }
+
+            return StatusOperacao.Erro;
         }
 
-        public Task<IEnumerable<CategoriaModel>> ObterCategoriasAsync()
+        public async Task<StatusOperacao> AtualizarCategoriaAsync(CategoriaModel categoria)
         {
-            throw new NotImplementedException();
+            if (!VerificaCategoriaExiste(categoria.IdCategoria))
+            {
+                return StatusOperacao.NaoEncontrado;
+            }
+
+            await _context.Categorias.AddAsync(categoria);
+
+            if (await _context.SaveChangesAsync() > 0)
+            {
+                return StatusOperacao.Sucesso;
+            }
+
+            return StatusOperacao.Erro;
+
         }
 
-        public Task RemoverCategoriaAsync(int id)
+        public async Task<StatusOperacao> RemoverCategoriaAsync(int Id)
         {
-            throw new NotImplementedException();
+            if (!VerificaCategoriaExiste(Id))
+            {
+                return StatusOperacao.NaoEncontrado;
+            }
+
+            if (Id > 0)
+            {
+                var LocalizarCategoria = await _context.Categorias
+                    .FirstOrDefaultAsync(c => c.IdCategoria == Id);
+
+                _context.Remove(LocalizarCategoria);
+
+                if (await _context.SaveChangesAsync() > 0)
+                {
+                    return StatusOperacao.Sucesso;
+                }
+
+                return StatusOperacao.Erro;
+            }
+
+            return StatusOperacao.IdInvalido;
+        }
+
+        private bool VerificaCategoriaExiste(int Id)
+        {
+            return _context.Categorias.Any(c => c.IdCategoria == Id);
         }
     }
 

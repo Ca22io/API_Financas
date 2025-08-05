@@ -75,28 +75,33 @@ namespace API_Financas.Data.Repositories
             return StatusOperacao.Erro;
         }
 
-        public async Task<StatusOperacao> RemoverTransacaoAsync(int id)
+        public async Task<StatusOperacao> RemoverTransacaoAsync(int Id)
         {
 
-            if (VerificarTransacaoexiste(id) == false)
+            if (!VerificarTransacaoexiste(Id))
             {
                 return StatusOperacao.NaoEncontrado;
             }
 
-            var transacao = await _context.Transacoes
-                .FirstOrDefaultAsync(t => t.IdTransacao == id);
-
-            _context.Transacoes.Remove(transacao);
-
-            if (await _context.SaveChangesAsync() > 0)
+            if (Id > 0)
             {
-                return StatusOperacao.Sucesso;
+                var transacao = await _context.Transacoes
+                    .FirstOrDefaultAsync(t => t.IdTransacao == Id);
+
+                _context.Transacoes.Remove(transacao);
+
+                if (await _context.SaveChangesAsync() > 0)
+                {
+                    return StatusOperacao.Sucesso;
+                }
+
+                return StatusOperacao.Erro;
             }
 
-            return StatusOperacao.Erro;
+            return StatusOperacao.IdInvalido;
         }
 
-        public bool VerificarTransacaoexiste(int id)
+        private bool VerificarTransacaoexiste(int id)
         {
             return _context.Transacoes.Any(t => t.IdTransacao == id);
         }
