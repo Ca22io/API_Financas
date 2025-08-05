@@ -1,5 +1,6 @@
 using API_Financas.Domain.Enum;
 using API_Financas.Domain.Interfaces;
+using API_Financas.Dto.Transacao;
 using API_Financas.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,9 +16,9 @@ namespace API_Financas.Data.Repositories
 
         }
 
-        public async Task<IEnumerable<TransacaoModel>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim)
+        public async Task<IEnumerable<TransacaoGetDto>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim)
         {
-            var transacoes = await _context.Transacoes
+            var Transacoes = await _context.Transacoes
                 .Include(t => t.Categoria)
                 .Include(t => t.Tipo)
                 .Where(t => t.Data >= dataInicio && t.Data <= dataFim)
@@ -25,19 +26,23 @@ namespace API_Financas.Data.Repositories
                 .AsNoTracking()
                 .ToListAsync();
 
-            return transacoes;
+            var TransacoesDto = ListaDeTransacoes(Transacoes);
+
+            return TransacoesDto;
         }
 
-        public async Task<IEnumerable<TransacaoModel>> ObterTransacaoAsync()
+        public async Task<IEnumerable<TransacaoGetDto>> ObterTransacaoAsync()
         {
-            var transacoes = await _context.Transacoes
+            var Transacoes = await _context.Transacoes
                 .Include(t => t.Categoria)
                 .Include(t => t.Tipo)
                 .OrderBy(t => t.Data)
                 .AsNoTracking()
                 .ToListAsync();
 
-            return transacoes;
+            var TransacoesDto = ListaDeTransacoes(Transacoes);
+
+            return TransacoesDto;
         }
 
         public async Task<StatusOperacao> AdicionarTransacaoAsync(TransacaoModel transacao)
@@ -105,6 +110,22 @@ namespace API_Financas.Data.Repositories
         private bool VerificarTransacaoexiste(int id)
         {
             return _context.Transacoes.Any(t => t.IdTransacao == id);
+        }
+
+        private List<TransacaoGetDto> ListaDeTransacoes(List<TransacaoModel> t)
+        {
+            var TransacoesDto = t.Select(t => new TransacaoGetDto
+            {
+                IdTransacao = t.IdTransacao,
+                Descricao = t.Descricao,
+                Valor = t.Valor,
+                Data = t.Data,
+                NomeTipo = t.Tipo.Nome,
+                NomeCategoria = t.Categoria.Nome
+            })
+                .ToList();
+
+            return TransacoesDto;
         }
     }
 }
