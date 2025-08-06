@@ -1,14 +1,12 @@
 <h1><bold>Api_Finanças</bold></h1>
 
 
-  Essa api simples foi criada apenas para fins de de estudo e prática, procurando maior aprofundamento de código com **Asp.Net Core** com suas tecnologias e aplicação de um código limpo utilizando os principios **SOLID**.<br>
+  Essa api simples foi criada apenas para fins de de estudo e prática, procurando maior aprofundamento de código com **Asp.Net Core** com suas tecnologias e aplicação de um código limpo utilizando os principios **SOLID**.
   Acredito que ainda tenha muitos ajustes que possam ser relaizados, eu mesmo já localizei alguns e vou atras de fazer as correções.
-  
-  <br>
 
-  Caso localize pontos de melhorias e correções vou ficar contente em ouvir seu feedback, pode entrar em contato comigo atraves de:<br>
+  Caso localize pontos de melhorias e correções vou ficar contente em ouvir seu feedback, pode entrar em contato comigo atraves de:
   <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank" rel="noopener noreferrer">Linkedin</a> <br>
-  <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer">Email</a>
+  <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer">E-mail</a>
 
 
 
