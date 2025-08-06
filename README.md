@@ -10,7 +10,7 @@ Caso identifique pontos de melhoria ou correções, ficarei contente em receber 
 
 <h2>Rotas do projeto</h2>
 
-<h4>Rotas do CRUD para categorias:</h4>
+<h4>CRUD para categorias:</h4>
 
 <img width="1838" height="363" alt="Rotas_API_Financas_Categoria" src="https://github.com/user-attachments/assets/e6b2f303-8695-45e4-9078-8291068e423a" />
 
@@ -26,7 +26,7 @@ Caso identifique pontos de melhoria ou correções, ficarei contente em receber 
   
 <hr>
 
-<h4>Rotas do CRUD para transações:</h4>
+<h4>CRUD para transações:</h4>
 <img width="1838" height="358" alt="Rotas_API_Financas_Transacao" src="https://github.com/user-attachments/assets/fb55e610-83ec-4788-8cc2-f3e80e34d8d5" />
 
 ⬇️**GET:** Essa rota permite obter todas as transações ou transações de um certo período enviando a data de inicio e fim atraves de query, sempre será retornado as informações
