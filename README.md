@@ -4,18 +4,15 @@
   Essa api simples foi criada apenas para fins de de estudo e prática, procurando maior aprofundamento de código com **Asp.Net Core** com suas tecnologias e aplicação de um código limpo utilizando os principios **SOLID**.
   Acredito que ainda tenha muitos ajustes que possam ser relaizados, eu mesmo já localizei alguns e vou atras de fazer as correções.
 
-  Caso localize pontos de melhorias e correções vou ficar contente em ouvir seu feedback, pode entrar em contato comigo atraves de:
+  Caso localize pontos de melhorias e correções vou ficar contente em ouvir seu feedback, pode entrar em contato comigo atraves de:<br>
   <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank" rel="noopener noreferrer">Linkedin</a> <br>
   <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer">E-mail</a>
-
-
 
 <h2>Rotas do projeto</h2>
 
 <h4>Rotas do CRUD para categorias:</h4>
 
 <img width="1838" height="363" alt="Rotas_API_Financas_Categoria" src="https://github.com/user-attachments/assets/e6b2f303-8695-45e4-9078-8291068e423a" />
-<br>
 
   ⬇️**GET** -- Essa rota permite obter todas as nossas categorias, com uma consulta completas com suas informações.
   
@@ -24,6 +21,7 @@
   ✏️**PUT** -- Essa rota permite fazer a atualização de uma categora. Ex: Corrigir um nome errado.
   
   🗑️**DELETE** -- Essa rota permite excluir uma categoria.
+  
 <hr>
 
 <h4>Rotas do CRUD para transações:</h4>
@@ -38,19 +36,17 @@ da taransação junto com o nome do tipo e catgeoria vinculada a ela.
   
 🗑️**DELETE:** Essa rota permite excluir uma transação.
 
-<br>
-
 ⚠️**OBS:** O tipo da transação não possui rota pois é predefinico com apenas dois tipos, sendo eles: RECEITA e DESPESA
 
 <hr>
 
 <h3>Como rodar o projeto</h3>
 
-- Copiando repositorio:<br>
+- Copiando repositorio:
   <code>git clone https://github.com/Ca22io/API_Financas</code>
-  <br>
-- Dependecia:<br>
+  
+- Dependecia:
   Possuir o sdk da versão do .NET 8.0
-  <br>
-- Rodando o projeto dentro da pasta do mesmo:<br>
+  
+- Rodando o projeto dentro da pasta do mesmo:
   <code>dotnet run</code> ou <code>dotnet build</code>
