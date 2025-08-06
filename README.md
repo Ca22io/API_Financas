@@ -13,12 +13,12 @@
 
 <h2>Rotas do projeto</h2>
 
-**<h4>Rotas do CRUD para categorias:</h4>**
+<h4>Rotas do CRUD para categorias:</h4>
 
 <img width="1838" height="363" alt="Rotas_API_Financas_Categoria" src="https://github.com/user-attachments/assets/e6b2f303-8695-45e4-9078-8291068e423a" />
 <br>
 
-  - GET -- Essa rota permite obter todas as nossas categorias, com uma consulta completas com suas informações.
+  **- GET** -- Essa rota permite obter todas as nossas categorias, com uma consulta completas com suas informações.
   
   - POST -- Essa rota permite incluir uma categoria que ainda não tinha sido cadastrada.
   
