@@ -11,7 +11,7 @@
 </p>
 
 <h2>Rotas do projeto</h2>
-!https://i.imgur.com/QHE7HdM.png
+<img src="[URL_da_Imagem](https://i.imgur.com/QHE7HdM.png)" alt="Texto Alternativo">
 
 <h3>Como rodar o projeto</h3>
 
