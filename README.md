@@ -1,5 +1,6 @@
 
-<img width="2816" height="1536" alt="Gemini_Generated_Image_9l2n4f9l2n4f9l2n" src="https://github.com/user-attachments/assets/fef8fe68-41ff-4f2f-94bd-f8f91d451980" />
+<img width="1100" height="200" alt="Gemini_Generated_Image_uhjd1iuhjd1iuhjd-cortada" src="https://github.com/user-attachments/assets/e8b40f27-3aad-422d-920c-55b2b02f375f" />
+
 
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
