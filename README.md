@@ -12,7 +12,18 @@
 
 
 <h2>Rotas do projeto</h2>
-<img width="1838" height="716" alt="Rotas_API_Financas" src="https://github.com/user-attachments/assets/66042da9-efc5-421f-9ef9-388704c2bf54" />
+- Rotas do crud para categorias:
+<img width="1838" height="363" alt="Rotas_API_Financas_Categoria" src="https://github.com/user-attachments/assets/e6b2f303-8695-45e4-9078-8291068e423a" />
+<br>
+<p>
+  - GET -- Essa rota permite obter todas as nossas categorias, com uma consulta completas com suas informações.
+  - POST -- Essa rota permite incluir uma categoria que ainda não tinha sido cadastrada.
+  - PUT -- Essa rota permite fazer a atualização de uma categora. Ex: Corrigir um nome errado.
+  - DELETE -- Essa rota permite excluir uma categoria.
+</p>
+<hr>
+<img width="1838" height="358" alt="Rotas_API_Financas_Transacao" src="https://github.com/user-attachments/assets/fb55e610-83ec-4788-8cc2-f3e80e34d8d5" />
+
 
 
 <h3>Como rodar o projeto</h3>
