@@ -39,7 +39,8 @@ da taransação junto com o nome do tipo e catgeoria vinculada a ela.
 - DELETE -- Essa rota permite excluir uma transação.
 
 <br>
-__OBS:__ O tipo da transação não possui rota pois é predefinico com apenas dois tipos, sendo eles: RECEITA e DESPESA
+
+⚠️**OBS:** O tipo da transação não possui rota pois é predefinico com apenas dois tipos, sendo eles: RECEITA e DESPESA
 
 <hr>
 
