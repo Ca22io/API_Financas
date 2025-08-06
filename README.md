@@ -2,7 +2,7 @@
 
   Esta API simples foi criada apenas para fins de estudo e prática, buscando o aprofundamento em desenvolvimento com **ASP.NET Core**, suas tecnologias e a aplicação de código limpo utilizando os princípios **SOLID**.
 
-Acredito que ainda existam muitos ajustes que possam ser realizados; eu mesmo já identifiquei alguns e trabalharei para corrigi-los.
+Acredito que ainda existam muitos ajustes que possam ser realizados. Eu mesmo já identifiquei alguns e trabalharei para corrigi-los.
 
 Caso identifique pontos de melhoria ou correções, ficarei contente em receber seu feedback. Você pode entrar em contato comigo por:<br>
   <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank" rel="noopener noreferrer">Linkedin</a> <br>
