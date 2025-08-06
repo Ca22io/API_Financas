@@ -6,8 +6,8 @@
 </p>
 <p>
   Caso localize pontos de melhoria agredeco e correções estou a disposição para ouvir seu feedback, pode entrar em contato comigo atraves de:<br>
-  <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank">Linkedin</a> <br>
-  <a href="malito:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer">Email</a>
+  <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank" rel="noopener noreferrer">Linkedin</a> <br>
+  <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer">Email</a>
 </p>
 
 <h3>Como rodar o projeto</h3>
