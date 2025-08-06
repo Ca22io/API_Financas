@@ -11,7 +11,7 @@
 </p>
 
 <h2>Rotas do projeto</h2>
-![Imagem das rotas do projeto](https://drive.google.com/uc?export=view&id=1zqjoAHgyjx4VG-sjpqJp1f3pLtTR3mlp)
+![Imagem das rotas do projeto](https://imgur.com/a/Aoi0g0e)
 
 <h3>Como rodar o projeto</h3>
 
