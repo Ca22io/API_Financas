@@ -6,7 +6,7 @@
 </p>
 <p>
   Caso localize pontos de melhoria agredeco e correções estou a disposição para ouvir seu feedback, pode entrar em contato comigo atraves de:<br>
-  <a href="www.linkedin.com/in/cassio-bindaco">Linkedin</a>
+  <a href="www.linkedin.com/in/cassio-bindaco" target="_blank">Linkedin</a>
   <a href="malito:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças">Email</a>
 </p>
 
