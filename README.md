@@ -1,10 +1,10 @@
 <h1><bold>Api_Finanças</bold></h1>
 
+  Esta API simples foi criada apenas para fins de estudo e prática, buscando o aprofundamento em desenvolvimento com **ASP.NET Core**, suas tecnologias e a aplicação de código limpo utilizando os princípios **SOLID**.
 
-  Essa api simples foi criada apenas para fins de de estudo e prática, procurando maior aprofundamento de código com **Asp.Net Core** com suas tecnologias e aplicação de um código limpo utilizando os principios **SOLID**.
-  Acredito que ainda tenha muitos ajustes que possam ser relaizados, eu mesmo já localizei alguns e vou atras de fazer as correções.
+Acredito que ainda existam muitos ajustes que possam ser realizados; eu mesmo já identifiquei alguns e trabalharei para corrigi-los.
 
-  Caso localize pontos de melhorias e correções vou ficar contente em ouvir seu feedback, pode entrar em contato comigo atraves de:<br>
+Caso identifique pontos de melhoria ou correções, ficarei contente em receber seu feedback. Você pode entrar em contato comigo por:<br>
   <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank" rel="noopener noreferrer">Linkedin</a> <br>
   <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer">E-mail</a>
 
@@ -21,6 +21,8 @@
   ✏️**PUT** -- Essa rota permite fazer a atualização de uma categora. Ex: Corrigir um nome errado.
   
   🗑️**DELETE** -- Essa rota permite excluir uma categoria.
+
+  ⚠️**OBS:** Como se trata de um crud bem simples não foi aplicado nenhuma lógica especifica.
   
 <hr>
 
