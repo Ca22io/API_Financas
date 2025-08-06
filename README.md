@@ -1,4 +1,5 @@
-<h1 align="center"><b>Api_Finanças</b></h1>
+
+<img width="2816" height="1536" alt="Gemini_Generated_Image_9l2n4f9l2n4f9l2n" src="https://github.com/user-attachments/assets/fef8fe68-41ff-4f2f-94bd-f8f91d451980" />
 
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
