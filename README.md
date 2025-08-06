@@ -11,6 +11,7 @@
 </p>
 
 <h2>Descrição do projeto</h2>
+
 > Esta API simples foi criada apenas para fins de estudo e prática, buscando o aprofundamento em desenvolvimento com **ASP.NET Core**, suas tecnologias e a aplicação de código limpo utilizando os princípios **SOLID**.
 
 Acredito que ainda existam muitos ajustes que possam ser realizados. Eu mesmo já identifiquei alguns e trabalharei para corrigi-los.
