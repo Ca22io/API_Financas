@@ -2,4 +2,6 @@
 
 
 <h3>Como rodar o projeto</h3>
+
+- Copiando repositorio:
 <code>git clone https://github.com/Ca22io/API_Financas</code>
