@@ -4,6 +4,7 @@
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 <p align="center">
+  <img src="https://img.shields.io/badge/.NET-8.0-green"/>
   <img src="https://img.shields.io/badge/ASP.NET-Framework-blue"/>
   <img src="https://img.shields.io/badge/Entity-Framework-blue"/>
   <img src="https://img.shields.io/badge/SqLite-SQL-blue"/>
