@@ -3,6 +3,9 @@
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=ASP.NET Core&message=framework&color=blue&style=for-the-badge&logo=C#"/>
+</p>
 
 <h2>Descrição do projeto</h2>
   Esta API simples foi criada apenas para fins de estudo e prática, buscando o aprofundamento em desenvolvimento com **ASP.NET Core**, suas tecnologias e a aplicação de código limpo utilizando os princípios **SOLID**.
