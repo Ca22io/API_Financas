@@ -1,9 +1,9 @@
 <h1><bold>Api_Finanças</bold></h1>
 
-<p>
-  Essa api simples foi criada apenas para fins de de estudo e prática, procurando maior aprofundamento de código com **Asp.Net Core** com suas tecnologias e aplicação de um código limpo utilizando os principios <bold>SOLID</bold>.<br>
+
+  Essa api simples foi criada apenas para fins de de estudo e prática, procurando maior aprofundamento de código com **Asp.Net Core** com suas tecnologias e aplicação de um código limpo utilizando os principios **SOLID**.<br>
   Acredito que ainda tenha muitos ajustes que possam ser relaizados, eu mesmo já localizei alguns e vou atras de fazer as correções.
-</p>
+
 <p>
   Caso localize pontos de melhorias e correções vou ficar contente em ouvir seu feedback, pode entrar em contato comigo atraves de:<br>
   <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank" rel="noopener noreferrer">Linkedin</a> <br>
