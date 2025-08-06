@@ -4,7 +4,7 @@
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=ASP.NET Core&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
+  <img src="https://img.shields.io/badge/ASP.NET-Framework-green"/>
 </p>
 
 <h2>Descrição do projeto</h2>
