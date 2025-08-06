@@ -12,7 +12,8 @@
 
 
 <h2>Rotas do projeto</h2>
- ![Texto alternativo](https://res.cloudinary.com/demo/image/upload/w_300/sample.jpg)
+<img width="1838" height="716" alt="Rotas_API_Financas" src="https://github.com/user-attachments/assets/66042da9-efc5-421f-9ef9-388704c2bf54" />
+
 
 <h3>Como rodar o projeto</h3>
 
