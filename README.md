@@ -44,11 +44,11 @@ da taransação junto com o nome do tipo e catgeoria vinculada a ela.
 
 <h3>Como rodar o projeto</h3>
 
-- Copiando repositorio:
+- Copiando repositório:
   <code>git clone https://github.com/Ca22io/API_Financas</code>
   
-- Dependecia:
-  Possuir o sdk da versão do .NET 8.0
+- Dependência:
+  Possuir o sdk da versão do .NET 8.0 instalado
   
 - Rodando o projeto dentro da pasta do mesmo:
   <code>dotnet run</code> ou <code>dotnet build</code>
