@@ -10,6 +10,9 @@
   <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer">Email</a>
 </p>
 
+<h2>Rotas do projeto</h2>
+![Imagem das rotas do projeto](https://drive.google.com/uc?export=view&id=1zqjoAHgyjx4VG-sjpqJp1f3pLtTR3mlp)
+
 <h3>Como rodar o projeto</h3>
 
 - Copiando repositorio:<br>
