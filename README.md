@@ -12,7 +12,7 @@
 
 
 <h2>Rotas do projeto</h2>
-- Rotas do crud para categorias:<br>
+- Rotas do crud para categorias:<br><br>
 <img width="1838" height="363" alt="Rotas_API_Financas_Categoria" src="https://github.com/user-attachments/assets/e6b2f303-8695-45e4-9078-8291068e423a" />
 <br>
 <p>
@@ -22,6 +22,7 @@
   <bold>- DELETE</bold> -- Essa rota permite excluir uma categoria.
 </p>
 <hr>
+- Rotas do CRUD para transações:<br><br>
 <img width="1838" height="358" alt="Rotas_API_Financas_Transacao" src="https://github.com/user-attachments/assets/fb55e610-83ec-4788-8cc2-f3e80e34d8d5" />
 
 
