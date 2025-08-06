@@ -18,7 +18,7 @@
 
 > Caso identifique pontos de melhoria ou correções, ficarei contente em receber seu feedback. Você pode entrar em contato comigo por:<br>
   <a href="https://www.linkedin.com/in/cassio-bindaco" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Linkedin-blue"/></a> <br>
-  <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Gmail-red</a>
+  <a href="mailto:bindaco77@gmail.com?subject=FeedBack%20de%20OAPI_Finanças" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Gmail-red"/></a>
 
 <h2>Rotas do projeto</h2>
 
