@@ -13,7 +13,8 @@
 
 <h2>Rotas do projeto</h2>
 
- <h4>Rotas do CRUD para categorias:</h4>
+**<h4>Rotas do CRUD para categorias:</h4>**
+
 <img width="1838" height="363" alt="Rotas_API_Financas_Categoria" src="https://github.com/user-attachments/assets/e6b2f303-8695-45e4-9078-8291068e423a" />
 <br>
 
