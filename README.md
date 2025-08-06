@@ -30,14 +30,14 @@
 <h4>Rotas do CRUD para transações:</h4>
 <img width="1838" height="358" alt="Rotas_API_Financas_Transacao" src="https://github.com/user-attachments/assets/fb55e610-83ec-4788-8cc2-f3e80e34d8d5" />
 
-- GET -- Essa rota permite obter todas as transações ou transações de um certo período enviando a data de inicio e fim atraves de query, sempre será retornado as informações
+⬇️**GET:** Essa rota permite obter todas as transações ou transações de um certo período enviando a data de inicio e fim atraves de query, sempre será retornado as informações
 da taransação junto com o nome do tipo e catgeoria vinculada a ela.
   
-- POST -- Essa rota permite incluir uma transação, nela é preciso passar as informações de uma transação, incluindo os ids de tipo e categoria que devem ser vinculados.
+📤**POST:** Essa rota permite incluir uma transação, nela é preciso passar as informações de uma transação, incluindo os ids de tipo e categoria que devem ser vinculados.
   
-- PUT -- Essa rota permite fazer a atualização de uma transação, sendo possivel alterar apenas a descrição e valor.
+✏️**PUT:** Essa rota permite fazer a atualização de uma transação, sendo possivel alterar apenas a descrição e valor.
   
-- DELETE -- Essa rota permite excluir uma transação.
+🗑️**DELETE:** Essa rota permite excluir uma transação.
 
 <br>
 
