@@ -1,4 +1,5 @@
 using API_Financas.Domain.Enum;
+using API_Financas.Dto.Categoria;
 using API_Financas.Models;
 using API_Financas.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace API_Financas.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdicionarCategoria([FromBody] CategoriaModel categoria)
+        public async Task<IActionResult> AdicionarCategoria([FromBody] CategoriaDto categoria)
         {
             if (ModelState.IsValid)
             {
@@ -41,7 +42,7 @@ namespace API_Financas.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> AtualizarCategoria([FromBody] CategoriaModel categoria)
+        public async Task<IActionResult> AtualizarCategoria([FromBody] CategoriaDto categoria)
         {
             if (ModelState.IsValid)
             {

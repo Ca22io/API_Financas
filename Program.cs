@@ -15,6 +15,8 @@ builder.Services.AddScoped<ITransacaoService, TransacaoService>();
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
+builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.AddControllers(); 
 
 builder.Services.AddEndpointsApiExplorer();
