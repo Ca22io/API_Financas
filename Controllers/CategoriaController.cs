@@ -1,6 +1,6 @@
-using API_Financas.Data.Repositories;
 using API_Financas.Domain.Enum;
 using API_Financas.Models;
+using API_Financas.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Financas.Controllers
@@ -10,17 +10,17 @@ namespace API_Financas.Controllers
 
     public class CategoriaController : ControllerBase
     {
-        private readonly CategoriaRepository _categoriaRepository;
+        private readonly ICategoriaService _categoriaService;
 
-        public CategoriaController(CategoriaRepository categoriaRepository)
+        public CategoriaController(ICategoriaService categoriaRepository)
         {
-            _categoriaRepository = categoriaRepository;
+            _categoriaService = categoriaRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> Obtercategorias()
         {
-            return Ok( await _categoriaRepository.ObterCategoriasAsync());
+            return Ok( await _categoriaService.ObterCategorias());
         }
 
         [HttpPost]
@@ -28,11 +28,11 @@ namespace API_Financas.Controllers
         {
             if (ModelState.IsValid)
             {
-                var Categoria = await _categoriaRepository.AdicionarCategoriaAsync(categoria);
+                var Categoria = await _categoriaService.AdicionarCategoria(categoria);
 
                 return Categoria switch
                 {
-                    StatusOperacao.Sucesso => Ok("Categoria criada com sucesso!"),
+                    StatusOperacao.Sucesso => Created(categoria.ToString(), "Categoria criada com sucesso!"),
                     StatusOperacao.Erro => BadRequest("Erro ao adicionar categoria!")
                 };
             }
@@ -45,16 +45,15 @@ namespace API_Financas.Controllers
         {
             if (ModelState.IsValid)
             {
-                var Categoria = await _categoriaRepository.AtualizarCategoriaAsync(categoria);
+                var Categoria = await _categoriaService.AtualizarCategoria(categoria);
 
                 return Categoria switch
                 {
-                    StatusOperacao.Sucesso => Ok("Categoria atualiza com sucesso!"),
-                    StatusOperacao.NaoEncontrado => BadRequest("Categoria não localizada!"),
+                    StatusOperacao.Sucesso => NoContent(),
+                    StatusOperacao.NaoEncontrado => NotFound("Categoria não localizada!"),
                     StatusOperacao.Erro => BadRequest("Erro ao atualizar categoria!")
                 };
             }
-
 
             return BadRequest(categoria);
         }
@@ -64,12 +63,12 @@ namespace API_Financas.Controllers
         {
             if (IdCategoria > 0)
             {
-                var Categoria = await _categoriaRepository.RemoverCategoriaAsync(IdCategoria);
+                var Categoria = await _categoriaService.RemoverCategoria(IdCategoria);
 
                 return Categoria switch
                 {
                     StatusOperacao.Sucesso => Ok("Categoria removida com sucesso!"),
-                    StatusOperacao.NaoEncontrado => BadRequest("Categoria não localizada"),
+                    StatusOperacao.NaoEncontrado => NotFound("Categoria não localizada"),
                     StatusOperacao.IdInvalido => BadRequest("O Id passado é invalido!"),
                     StatusOperacao.Erro => BadRequest("Erro ao excluir categoria!")
                 };

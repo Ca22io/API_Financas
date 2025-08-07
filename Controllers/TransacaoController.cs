@@ -50,8 +50,8 @@ namespace API_Financas.Controllers
 
                 return AdicionarTransacao switch
                 {
-                    StatusOperacao.Sucesso => Ok("Transação adicionada com sucesso!"),
-                    StatusOperacao.Erro => BadRequest("Erro ao adicionar transação!")
+                    StatusOperacao.Sucesso => Created(Transacao.ToString(), "Transação adicionada com sucesso!"),
+                    StatusOperacao.Erro => NotFound("Erro ao adicionar transação!")
                 };
             }
 
@@ -69,7 +69,7 @@ namespace API_Financas.Controllers
                 {
                     StatusOperacao.Sucesso => Ok("Transacao deletada com sucesso!"),
                     StatusOperacao.NaoEncontrado => BadRequest("Transacao não encontrada!"),
-                    StatusOperacao.Erro => BadRequest("Erro ao deletar transacao!")
+                    StatusOperacao.Erro => NotFound("Erro ao deletar transacao!")
                 };
             }
 
@@ -95,7 +95,7 @@ namespace API_Financas.Controllers
                 {
                     StatusOperacao.Sucesso => Ok("Transação atualizada com sucesso!"),
                     StatusOperacao.NaoEncontrado => BadRequest("Transação não encontrada!"),
-                    StatusOperacao.Erro => BadRequest("Erro ao atualizar transação!")
+                    StatusOperacao.Erro => NotFound("Erro ao atualizar transação!")
                 };
             }
 

@@ -1,5 +1,4 @@
 using API_Financas.Domain.Enum;
-using API_Financas.Domain.Interfaces;
 using API_Financas.Dto.Transacao;
 using API_Financas.Models;
 using Microsoft.EntityFrameworkCore;
@@ -51,11 +50,6 @@ namespace API_Financas.Data.Repositories
 
             if (await _context.SaveChangesAsync() > 0)
             {
-                var TransacaoId = await _context.Transacoes
-                    .Where(t => t == transacao)
-                    .Select(t => t.IdTransacao)
-                    .FirstOrDefaultAsync();
-
                 return StatusOperacao.Sucesso;
             }
 

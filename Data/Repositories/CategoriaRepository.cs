@@ -1,11 +1,9 @@
 using API_Financas.Domain.Enum;
-using API_Financas.Domain.Interfaces;
 using API_Financas.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace API_Financas.Data.Repositories
 {
-
     public class CategoriaRepository : ICategoriaRepository
     {
         public readonly FinancasContext _context;
@@ -80,6 +78,21 @@ namespace API_Financas.Data.Repositories
         private bool VerificaCategoriaExiste(int Id)
         {
             return _context.Categorias.Any(c => c.IdCategoria == Id);
+        }
+
+        Task<StatusOperacao> ICategoriaRepository.AdicionarCategoriaAsync(CategoriaModel categoria)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<StatusOperacao> ICategoriaRepository.AtualizarCategoriaAsync(CategoriaModel categoria)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<StatusOperacao> ICategoriaRepository.RemoverCategoriaAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 
