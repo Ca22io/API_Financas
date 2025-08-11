@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using API_Financas.Data.Repositories;
 using API_Financas.Domain.Enum;
 using API_Financas.Dto.Transacao;
@@ -17,14 +18,14 @@ namespace API_Financas.Services
             _mapper = mapper;
         }
 
-        public async Task<TransacaoGetDto> ObterTransacoes(DateOnly? dataInicio, DateOnly? dataFim)
+        public async Task<IEnumerable<TransacaoGetDto>> ObterTransacoes(DateOnly? dataInicio, DateOnly? dataFim)
         {
 
             if (dataInicio == null && dataFim == null)
             {
                 var Transacoes = await _transacaoRepository.ObterTransacaoAsync();
-
-                var TransacoesDto = _mapper.Map<TransacaoGetDto>(Transacoes);
+                
+                var TransacoesDto = _mapper.Map<List<TransacaoGetDto>>(Transacoes);
 
                 return TransacoesDto;
             }
@@ -32,7 +33,7 @@ namespace API_Financas.Services
             {
                 var Transacoes = await _transacaoRepository.ObterTransacoesPorDataAsync(dataInicio.Value, dataFim.Value);
                 
-                var TransacoesDto = _mapper.Map<TransacaoGetDto>(Transacoes);
+                var TransacoesDto = _mapper.Map<List<TransacaoGetDto>>(Transacoes);
 
                 return TransacoesDto;
             }
