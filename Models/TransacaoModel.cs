@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using API_Financas.Dto.Transacao;
 
 namespace API_Financas.Models
 {

@@ -1,6 +1,7 @@
 using API_Financas.Data.Repositories;
 using API_Financas.Data;
 using Microsoft.EntityFrameworkCore;
+using API_Financas.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +9,13 @@ var Configuration = builder.Configuration;
 
 builder.Services.AddDbContext<FinancasContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<TransacaoRepository>();
-builder.Services.AddScoped<CategoriaRepository>();
+builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
+builder.Services.AddScoped<ITransacaoService, TransacaoService>();
+
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddControllers(); 
 

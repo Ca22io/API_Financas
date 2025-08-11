@@ -1,14 +1,12 @@
 using API_Financas.Domain.Enum;
-using API_Financas.Domain.Interfaces;
 using API_Financas.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace API_Financas.Data.Repositories
 {
-
     public class CategoriaRepository : ICategoriaRepository
     {
-        public readonly FinancasContext _context;
+        private readonly FinancasContext _context;
 
         public CategoriaRepository(FinancasContext context)
         {
@@ -17,9 +15,9 @@ namespace API_Financas.Data.Repositories
 
         public async Task<IEnumerable<CategoriaModel>> ObterCategoriasAsync()
         {
-            var categorias = await _context.Categorias.AsNoTracking().ToListAsync();
+            var Categorias = await _context.Categorias.AsNoTracking().ToListAsync();
 
-            return categorias;
+            return Categorias;
         }
 
         public async Task<StatusOperacao> AdicionarCategoriaAsync(CategoriaModel categoria)
@@ -81,6 +79,7 @@ namespace API_Financas.Data.Repositories
         {
             return _context.Categorias.Any(c => c.IdCategoria == Id);
         }
+
     }
 
 }

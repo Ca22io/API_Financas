@@ -1,7 +1,7 @@
 using API_Financas.Domain.Enum;
 using API_Financas.Models;
 
-namespace API_Financas.Domain.Interfaces
+namespace API_Financas.Data.Repositories
 {
     public interface ICategoriaRepository
     {
