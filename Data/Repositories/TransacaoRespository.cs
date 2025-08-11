@@ -15,7 +15,7 @@ namespace API_Financas.Data.Repositories
 
         }
 
-        public async Task<IEnumerable<TransacaoGetDto>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim)
+        public async Task<IEnumerable<TransacaoModel>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim)
         {
             var Transacoes = await _context.Transacoes
                 .Include(t => t.Categoria)
@@ -25,12 +25,11 @@ namespace API_Financas.Data.Repositories
                 .AsNoTracking()
                 .ToListAsync();
 
-            var TransacoesDto = ListaDeTransacoes(Transacoes);
 
-            return TransacoesDto;
+            return Transacoes;
         }
 
-        public async Task<IEnumerable<TransacaoGetDto>> ObterTransacaoAsync()
+        public async Task<IEnumerable<TransacaoModel>> ObterTransacaoAsync()
         {
             var Transacoes = await _context.Transacoes
                 .Include(t => t.Categoria)
@@ -39,9 +38,7 @@ namespace API_Financas.Data.Repositories
                 .AsNoTracking()
                 .ToListAsync();
 
-            var TransacoesDto = ListaDeTransacoes(Transacoes);
-
-            return TransacoesDto;
+            return Transacoes;
         }
 
         public async Task<StatusOperacao> AdicionarTransacaoAsync(TransacaoModel transacao)

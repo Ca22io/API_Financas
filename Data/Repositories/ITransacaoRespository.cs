@@ -6,8 +6,8 @@ namespace API_Financas.Data.Repositories
 {
     public interface ITransacaoRepository
     {
-        Task<IEnumerable<TransacaoGetDto>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim);
-        Task<IEnumerable<TransacaoGetDto>> ObterTransacaoAsync();
+        Task<IEnumerable<TransacaoModel>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim);
+        Task<IEnumerable<TransacaoModel>> ObterTransacaoAsync();
         Task<StatusOperacao> AdicionarTransacaoAsync(TransacaoModel transacao);
         Task<StatusOperacao> AtualizarTransacaoAsync(TransacaoModel transacao);
         Task<StatusOperacao> RemoverTransacaoAsync(int id);
