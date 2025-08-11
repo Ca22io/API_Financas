@@ -63,3 +63,27 @@ da transação com o nome do tipo e categoria vinculada a ela.
   
 - Rodando o projeto dentro da pasta do mesmo:
   <code>dotnet run</code> ou <code>dotnet build</code>
+
+<h2>🆕 Versão 2.0</h2>
+<p align="justify">
+  A versão 2.0 do projeto foi desenvolvida com o objetivo de aprimorar a estrutura e a organização do código, seguindo os princípios do Clean Code e SOLID. Nesta versão, foram implementadas as seguintes melhorias:
+  <ul>
+    <li>Refatoração do código para melhorar a legibilidade e a manutenção.</li>
+    <li>Implementação de testes unitários para garantir a qualidade do código.</li>
+    <li>Adição da camada de serviços no projeto.</li>
+    <li>Adição do mapeamento de objetos com AutoMapper.</li>
+  </ul>
+  Essas melhorias visam tornar o projeto mais robusto e fácil de entender, facilitando futuras manutenções e expansões.
+  A versão 1.0 serviu como base para o desenvolvimento, onde foram implementadas melhorias significativas na estrutura e organização do código.
+</p>
+
+<h2>Versão 1.0</h2>
+<p align="justify">
+  A versão 1.0 do projeto foi desenvolvida com o objetivo de criar uma API simples para gerenciar categorias e transações financeiras. Nesta versão, foram implementadas as seguintes funcionalidades:
+  <ul>
+    <li>CRUD completo para categorias.</li>
+    <li>CRUD completo para transações.</li>
+    <li>Validações básicas de entrada de dados.</li>
+    <li>Documentação da API utilizando Swagger.</li>
+  </ul>
+</p>
