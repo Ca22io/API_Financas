@@ -12,7 +12,9 @@ namespace API_Financas.Mapping
 
             CreateMap<TransacaoPutDto, TransacaoModel>();
 
-            CreateMap<TransacaoModel, TransacaoGetDto>(); 
+            CreateMap<TransacaoModel, TransacaoGetDto>()
+                .ForMember(dest => dest.NomeTipo, opt => opt.MapFrom(src => src.Tipo.Nome))
+                .ForMember(dest => dest.NomeCategoria, opt => opt.MapFrom(src => src.Categoria.Nome));; 
         }
     }
 }

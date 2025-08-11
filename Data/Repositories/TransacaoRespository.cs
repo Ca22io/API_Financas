@@ -12,7 +12,6 @@ namespace API_Financas.Data.Repositories
         public TransacaoRepository(FinancasContext context)
         {
             _context = context;
-
         }
 
         public async Task<IEnumerable<TransacaoModel>> ObterTransacoesPorDataAsync(DateOnly dataInicio, DateOnly dataFim)
